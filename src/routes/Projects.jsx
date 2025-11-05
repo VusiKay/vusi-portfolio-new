@@ -5,6 +5,12 @@ import { FiExternalLink, FiSmartphone, FiMonitor, FiTablet } from "react-icons/f
 import { Link } from "react-router-dom";
 import "/src/Projects.css";
 
+// Import all images
+import SplashScreen from '/src/assets/Splash Screen (Bezel).png';
+import DesktopGA from '/src/assets/DesktopGA.png';
+import HeroDesktop from '/src/assets/Hero DESKTOP REAL Edge.png';
+import HomePageGoldenAmple from '/src/assets/HomePageGoldenAmple.png';
+
 // Sample projects data with React Router links for main projects
 const projects = [
   {
@@ -13,106 +19,62 @@ const projects = [
       "A community-driven ride-hailing platform connecting passengers with trusted local drivers, emphasizing safety and trust within communities.",
     devices: ["mobile"],
     link: "/projects/ridelocal",
-    image: "/src/assets/Splash Screen (Bezel).png",
+    image: SplashScreen,
   },
   {
     title: "Golden Ample",
     description:
-      "A redesign of Golden Ample, a digital solutions company offering bespoke software, website development, and IT facilitation & assessor services.",
-    devices: ["desktop", "tablet", "mobile"],
+      "An e-commerce platform offering a curated selection of premium apple products, from fresh harvests to artisanal ciders and gourmet gifts.",
+    devices: ["desktop"],
     link: "/projects/goldenample",
-    image: "/src/assets/DesktopGA.png",
+    image: DesktopGA,
   },
   {
     title: "Edgecon",
     description:
-      "A responsive corporate website redesign that improves client engagement and brand authority.",
-      devices: ["desktop", "tablet", "mobile"],
-    link: "/projects/edgecon",
-    image: "/src/assets/Hero DESKTOP REAL Edge.png",
-  },
-  /* {
-    title: "Farmers’ App Design",
-    description:
-      "A mobile-first UI/UX project for farmers to track crops, manage tasks, and visualize growth using intuitive dashboards and notifications.",
-    devices: ["mobile", "tablet"],
-    link: "#",
-    image: "/src/assets/Splash Screen (Bezel).png",
-  },
-  {
-    title: "Portfolio Website UI",
-    description:
-      "Designed and implemented a modern portfolio website, showcasing skills in UI/UX design, frontend coding, and responsive layouts.",
-    devices: ["desktop", "tablet"],
-    link: "#",
-    image: "/src/assets/DesktopGA.png",
-  },
-  {
-    title: "Sports Admin Dashboard",
-    description:
-      "A web-based dashboard for sports administration: managing events, participants, and schedules, blending design usability with backend logic.",
+      "A comprehensive conference management system designed to streamline event planning, registration, and attendee engagement for tech conferences.",
     devices: ["desktop"],
-    link: "#",
-    image: "/src/assets/Hero DESKTOP REAL Edge.png",
+    link: "/projects/edgecon",
+    image: HeroDesktop,
   },
-  {
-    title: "Design System Case Study",
-    description:
-      "Developed a scalable design system incorporating typography, spacing, color palettes, and component libraries to unify product experiences.",
-    devices: ["desktop", "tablet", "mobile"],
-    link: "#",
-    image: "/src/assets/HomePageGoldenAmple.png",
-  },
-  {
-    title: "UI/UX Case Study: Travel App",
-    description:
-      "A conceptual travel app demonstrating seamless onboarding, exploration, and booking flows with attention to accessibility and responsiveness.",
-    devices: ["mobile", "tablet"],
-    link: "#",
-    image: "/src/assets/HomePageGoldenAmple.png",
-  }, */
 ];
 
 function Projects() {
   return (
     <>
       <Header />
-
-      <main className="projects-page">
-        <h1 className="projects-title">My Projects.</h1>
-        <p className="projects-subtitle">
-          A selection of projects showcasing UI/UX, product design, and systems-thinking skills.
-        </p>
+      <div className="projects-page">
+        <div className="projects-hero">
+          <h1>Selected Projects</h1>
+          <p>
+            A collection of projects where design, functionality, and user experience converge to create meaningful digital solutions.
+          </p>
+        </div>
 
         <div className="projects-grid">
-          {projects.map((p, idx) => (
-            <div className="project-card" key={idx}>
-              <div className="project-image-wrap">
-                <img src={p.image} alt={p.title} className="project-image" />
-                <div className="project-devices">
-                  {p.devices.includes("mobile") && <FiSmartphone title="Mobile" />}
-                  {p.devices.includes("tablet") && <FiTablet title="Tablet" />}
-                  {p.devices.includes("desktop") && <FiMonitor title="Desktop" />}
+          {projects.map((project, index) => (
+            <div key={index} className="project-card">
+              <div className="project-image">
+                <img src={project.image} alt={project.title} />
+                <div className="project-overlay">
+                  <Link to={project.link} className="project-link">
+                    View Case Study <FiExternalLink />
+                  </Link>
                 </div>
               </div>
-              <div className="project-content">
-                <h3>{p.title}</h3>
-                <p>{p.description}</p>
-                {p.link.startsWith("#") ? (
-                  <a href={p.link} className="projects-link">
-                    View Project <FiExternalLink />
-                  </a>
-                ) : (
-                  <Link to={p.link} className="projects-link">
-                    View Project <FiExternalLink />
-                  </Link>
-                )}
+              <div className="project-info">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="project-devices">
+                  {project.devices.includes("mobile") && <FiSmartphone />}
+                  {project.devices.includes("desktop") && <FiMonitor />}
+                  {project.devices.includes("tablet") && <FiTablet />}
+                </div>
               </div>
             </div>
           ))}
         </div>
-      </main>
-
+      </div>
       <Footer />
     </>
   );
