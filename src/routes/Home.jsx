@@ -8,7 +8,7 @@ import Header from '/src/Components/Layout/Header.jsx'
 import Footer from '/src/Components/Layout/Footer.jsx'
 import ProjectsGrid from '../Components/ProjectsGrid.jsx';
 
-function Body(){
+function Home(){
 
     const style = {
         /* color: 'aqua', */
@@ -80,4 +80,4 @@ function Body(){
 
     );
 }
-export default Body
+export default Home
