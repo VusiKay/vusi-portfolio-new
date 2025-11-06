@@ -74,9 +74,10 @@ function Contact() {
         <section className="contact-info">
           <h1 className="contact-title">Get in touch.</h1>
           <p className="contact-sub">
-            I’m Katlego Mthombeni — Product & UI/UX Designer with a systems development and frontend engineering background. I also bring leadership from sports administration and work as an accredited MICT & CATHSSETA Assessor.
+            I’m Katlego Mthombeni — Product & UI/UX Designer with a systems development and frontend engineering background. 
+            I also bring leadership from sports administration and work as an accredited MICT & CATHSSETA Assessor.
             <br />
-            Based in South Africa — available for remote and local opportunities.
+            Based in South Africa, available for remote and local opportunities.
           </p>
 
           <div className="contact-cards">
@@ -114,10 +115,12 @@ function Contact() {
           </div>
 
           <div className="contact-bio">
-            <p><strong>Quick snapshot:</strong> Systems-minded designer — HTML/CSS/JavaScript (React), product thinking, UI/UX, mentorship, and sports administration experience. Former bricklayer turned designer — I bring discipline, structure, and a hands-on mentality to every project.</p>
+            <p><strong>Quick snapshot:</strong> Systems-minded designer,  HTML/CSS/JavaScript (React),
+             product thinking, UI/UX, mentorship, and sports administration experience.
+              Former bricklayer turned designer — I bring discipline, structure, and a hands-on mentality to every project.</p>
             <ul className="contact-tags" aria-hidden="true">
               <li>Product Design</li>
-              <li>UI/UX</li>
+              <li>UI/UX Designer</li>
               <li>Systems Development</li>
               <li>Frontend (React)</li>
               <li>MICT & CATHSSETA Assessor</li>
@@ -174,14 +177,15 @@ function Contact() {
               </button>
 
               <div className="form-status" role="status" aria-live="polite">
-                {status === "success" && <span className="success">Message action opened — please complete in your mail client.</span>}
-                {status === "error" && <span className="error">Something went wrong — try again later.</span>}
+                {status === "success" && <span className="success">Message action opened, please complete in your mail client.</span>}
+                {status === "error" && <span className="error">Something went wrong, try again later.</span>}
               </div>
             </div>
           </form>
 
           <p className="privacy-note">
-            By contacting me you agree to share your name and message. I’ll only use your information to reply — no spam. For professional inquiries only.
+            By contacting me you agree to share your name and message.
+             I’ll only use your information to reply, no spam. For professional inquiries only.
           </p>
         </section>
       </div>

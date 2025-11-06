@@ -128,7 +128,8 @@
     border-radius: 10px;
     border: 1px solid #f0f5fb;
     font-family: var(--font-body);
-    
+    line-height: 1.7rem;
+    font-size: 1rem;
   }
   
   .contact-tags {
@@ -278,6 +279,18 @@
     .contact-info {
       order: 1;
     }
+    .contact-img{
+      width: 100%; 
+      height: 33vh; 
+     
+     }
+
+     
+    .contact-title {
+      margin-top: -15px;
+    }
+
+    
   }
   
   @media (max-width: 480px) {
@@ -296,5 +309,6 @@
     .contact-cards {
       grid-template-columns: 1fr;
     }
+    
   }
   

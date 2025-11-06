@@ -12,7 +12,11 @@
   --font-alt: 'Montserrat', sans-serif;
   --primary-color: #009688;
 }
-
+/* Prevent horizontal scroll */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
 /* === Grid Layout === */
 .project-grid {
   display: grid;
@@ -115,16 +119,20 @@ font-family: var(--font-body);
 
 /* === Responsive tweaks === */
 @media (max-width: 768px) {
-  .projects-grid {
-    padding: 40px 20px;
-    gap: 28px;
+  .project-grid {
+    grid-template-columns: 1fr;
+    padding: 28px 14px;                 /* comfortable side spacing on phones */
+    gap: 20px;
   }
+  .project-img { height: 260px; padding: 6px; }
+  .project-content { padding: 16px; }
+}
 
-  .project-img {
-    height: 280px;
-  }
-
-  .project-title {
-    font-size: 1.25rem;
-  }
+/* Extra small phones */
+@media (max-width: 420px) {
+  .project-grid { padding: 20px 12px; gap: 16px; }
+  .project-img { height: 200px; padding: 6px; }
+  .project-content { padding: 12px; }
+  .project-title { font-size: 1.15rem; }
+  .project-link { padding: 7px 12px; font-size: 0.95rem; }
 }
