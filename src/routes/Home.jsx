@@ -7,6 +7,7 @@ import SkillsSection from '/src/Components/Layout/SkillsSection.jsx'
 import Header from '/src/Components/Layout/Header.jsx'
 import Footer from '/src/Components/Layout/Footer.jsx'
 import ProjectsGrid from '../Components/ProjectsGrid.jsx';
+import ForMobile from './assets/ForMobile.png';
 
 function Home(){
 
@@ -26,7 +27,7 @@ function Home(){
     <section className="hero">
   <picture>
     {/* Mobile / Tablet */}
-    <source media="(max-width: 1024px)" srcSet="/src/assets/ForMobile.png" />
+    <source media="(max-width: 1024px)" srcSet={ForMobile} />
     {/* Default Desktop */}
     <img src={heroImg} alt="Hero visual" className="hero-img" />
   </picture>
