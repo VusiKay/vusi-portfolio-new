@@ -25,7 +25,7 @@ export default function ProjectsGrid() {
           A community-driven ride-hailing platform designed to connect passengers with reliable local drivers,
            promoting safety and trust within communities.
         </p>
-        <Link to="/projects/edgecon" className="project-link">
+        <Link to="/projects/ridelocal" className="project-link">
   <span>View project</span>
   <svg className="arrow-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
     <path fill="currentColor" d="M12 4l1.41 1.41L8.83 10H20v2H8.83l4.58 4.59L12 18l-8-8z"/>
