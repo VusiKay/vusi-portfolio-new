@@ -7,7 +7,7 @@
 
 /* reset */
 * { box-sizing: border-box; }
-html, body, #root { height: 100%; margin: 0; padding: 0;  }
+html, body, #root { height: 100%; margin: 0; padding: 0;  scroll-behavior: smooth; }
 
 /* hero */
 .hero {
@@ -16,6 +16,18 @@ html, body, #root { height: 100%; margin: 0; padding: 0;  }
   position: relative;
   overflow: hidden;    /* hide any overflow from image scaling */
 }
+.menu-links.active {
+  color: wheat;      /* or your brand color */
+  font-weight: 600;
+  border-bottom: 2px solid wheat; /* optional underline */
+}
+
+/* For mobile menu */
+.mobile-menu .active {
+  color: wheat;
+  font-weight: 600;
+}
+
 
 /* image */
 .hero-img {

@@ -6,35 +6,35 @@ import { Link } from "react-router-dom";
 import "/src/Projects.css";
 
 // Import all images
-import SplashScreen from '/src/assets/Splash Screen (Bezel).png';
-import DesktopGA from '/src/assets/DesktopGA.png';
-import HeroDesktop from '/src/assets/Hero DESKTOP REAL Edge.png';
+import IntroductionScreen from '/src/assets/LawLens Image (1).png';
+import OpenWay from '/src/assets/OpenWay Image.png';
+import FarmGuardApp from '/src/assets/Results Screen FarmGuard.png';
 
 // Sample projects data with React Router links for main projects
 const projects = [
   {
-    title: "RideLocal",
+    title: "LawLens",
     description:
-      "A community-driven ride-hailing platform connecting passengers with trusted local drivers, emphasizing safety and trust within communities.",
+      "A trust-first, AI-enhanced legal comprehension platform that balances clarity, transparency, and risk awareness through intentional interaction patterns and structured information design.",
     devices: ["mobile"],
-    link: "/projects/ridelocal",
-    image: SplashScreen,
+    link: "/projects/lawlens",
+    image: IntroductionScreen,
   },
   {
-    title: "Golden Ample",
+    title: "OpenWay",
     description:
-      "A redesign of Golden Ample, a digital solutions company offering bespoke software, website development, and IT facilitation & assessor services.",
-    devices: ["desktop", "tablet", "mobile"],
-    link: "/projects/goldenample",
-    image: DesktopGA,
+      "A human-centered digital banking onboarding experience that reduces friction, anxiety, and failure rates for first-time digital banking users through clear guidance, forgiveness in errors, and transparent verification.",
+    devices: ["mobile"],
+    link: "/projects/openway",
+    image: OpenWay,
   },
   {
-    title: "Edgecon",
+    title: "FarmGuard",
     description:
-      "A responsive corporate website redesign that improves client engagement and brand authority.",
-    devices: ["desktop", "tablet", "mobile"],
-    link: "/projects/edgecon",
-    image: HeroDesktop,
+      "A farmer-first mobile platform that leverages image-based plant diagnosis and localized climate insights to help small-scale farmers reduce crop risk and make more informed farming decisions.",
+    devices: [ "mobile"],
+    link: "/projects/farmguard",
+    image: FarmGuardApp,
   },
 ];
 

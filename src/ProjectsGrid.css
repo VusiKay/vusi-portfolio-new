@@ -51,7 +51,7 @@ font-family: var(--font-body);
 /* === Image === */
 .project-img {
   width: 100%;
-  height: 360px; /* Gives enough space for full mockup without cropping too much */
+  height: 460px; /* Gives enough space for full mockup without cropping too much */
   object-fit: contain; /* prevents squishing and preserves your exported image look */
   background: #abaeb631;
   padding: 10px;

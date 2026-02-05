@@ -1,20 +1,27 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from './App';
+import RootLayout from "./Components/Layout/RootLayout";
+
 import Home from './routes/Home';
-import About from './routes/About.jsx';
+import About from './routes/About';
 import Projects from './routes/Projects';
 import Contact from './routes/Contact';
-import RideLocalPage from './routes/RideLocalPage';
-import GoldenAmplePage from './routes/GoldenAmplePage';
-import EdgeconPage from './routes/EdgeconPage';
+import LawLensPage from './routes/LawLensPage';
+import OpenWayPage from './routes/OpenWayPage';
+import FarmGuardPage from './routes/FarmGuardPage';
 
 export const router = createBrowserRouter([
-    { path: '/', element: <App /> },
-    { path: '/home', element: <Home /> },
-    { path: '/about', element: <About /> },
-    { path: '/projects', element: <Projects /> },
-    { path: '/projects/ridelocal', element: <RideLocalPage /> },
-    { path: '/projects/goldenample', element: <GoldenAmplePage /> },
-    { path: '/projects/edgecon', element: <EdgeconPage /> },
-    { path: '/contact', element: <Contact /> },
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/home", element: <Home /> },
+      { path: "/about", element: <About /> },
+      { path: "/projects", element: <Projects /> },
+      { path: "/projects/lawlens", element: <LawLensPage /> },
+      { path: "/projects/openway", element: <OpenWayPage /> },
+      { path: "/projects/farmguard", element: <FarmGuardPage /> },
+      { path: "/contact", element: <Contact /> },
+    ],
+  },
 ]);

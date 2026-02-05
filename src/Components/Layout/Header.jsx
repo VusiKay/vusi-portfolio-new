@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 function Header() {
@@ -12,41 +12,94 @@ function Header() {
   return (
     <>
       <div className="header-container">
-        <Link className="logo-link" to="/home">
+        <NavLink className="logo-link" to="/home">
           <p className="logo">
             Katlego <span style={style}>VM.</span>
           </p>
-        </Link>
+        </NavLink>
 
         <div className="links-container">
-          <Link className="menu-links" to="/home">
+          <NavLink
+            to="/home"
+            className={({ isActive }) =>
+              isActive ? "menu-links active" : "menu-links"
+            }
+          >
             Home
-          </Link>
-          <Link className="menu-links" to="/about">
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "menu-links active" : "menu-links"
+            }
+          >
             About
-          </Link>
-          <Link className="menu-links" to="/projects">
+          </NavLink>
+
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? "menu-links active" : "menu-links"
+            }
+          >
             Projects
-          </Link>
-          <Link className="menu-links" to="/contact">
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive ? "menu-links active" : "menu-links"
+            }
+          >
             Contact
-          </Link>
+          </NavLink>
         </div>
 
-        {/* Hamburger icon for mobile/tablet */}
-        <div className={`hamburger ${menuOpen ? "active" : ""}`} onClick={toggleMenu}>
+        {/* Hamburger icon */}
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+        >
           <span className="bar"></span>
           <span className="bar"></span>
           <span className="bar"></span>
         </div>
       </div>
 
-      {/* Overlay menu */}
+      {/* Mobile menu */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <Link onClick={closeMenu} to="/home">Home</Link>
-        <Link onClick={closeMenu} to="/about">About</Link>
-        <Link onClick={closeMenu} to="/projects">Projects</Link>
-        <Link onClick={closeMenu} to="/contact">Contact</Link>
+        <NavLink
+          onClick={closeMenu}
+          to="/home"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          onClick={closeMenu}
+          to="/about"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          About
+        </NavLink>
+
+        <NavLink
+          onClick={closeMenu}
+          to="/projects"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Projects
+        </NavLink>
+
+        <NavLink
+          onClick={closeMenu}
+          to="/contact"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          Contact
+        </NavLink>
       </div>
     </>
   );
